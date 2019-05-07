@@ -1,0 +1,11 @@
+spring:
+  application.name: discovery-server
+eureka:
+  dashboard.path: /eurekawebui
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+server:
+  address: localhost
+  port: 8585
