@@ -4,8 +4,8 @@ import com.roketbnk.test.serviceb.entity.ServiceBMessage;
 import com.roketbnk.test.serviceb.repository.ServiceBRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,8 +17,8 @@ public class ServiceBResource {
 
     private final ServiceBRepository repository;
 
-    @GetMapping(value = "/{message}")
-    public ServiceBMessage findOwner(@PathVariable("message") String message) {
+    @PostMapping(value = "/send")
+    public ServiceBMessage findOwner(@RequestBody String message) {
         ServiceBMessage entity = new ServiceBMessage();
         entity.setMessage(message);
         repository.save(entity);
