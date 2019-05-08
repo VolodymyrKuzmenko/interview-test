@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
     <artifactId>uaa</artifactId>
-    <name>uaa</name>
+    <name>uaa-service</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
