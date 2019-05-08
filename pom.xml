@@ -19,6 +19,7 @@
         <module>service-a</module>
         <module>service-b</module>
         <module>service-discovery</module>
+        <module>uaa</module>
     </modules>
 
     <properties>
