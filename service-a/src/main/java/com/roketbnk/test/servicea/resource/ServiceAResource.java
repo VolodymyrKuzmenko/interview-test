@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 
 import static java.lang.Thread.currentThread;
 
-@RequestMapping("/servicea/api/")
+@RequestMapping("/api")
 @RestController
 @RequiredArgsConstructor
 @Slf4j

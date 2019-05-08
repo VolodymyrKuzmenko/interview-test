@@ -1,4 +1,8 @@
-server.port: 8081
+server:
+  port: 8081
+  address: localhost
+  servlet:
+    context-path: /serviceb
 spring:
   application.name: service-b
   h2.console:
@@ -16,3 +20,6 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://localhost:8585/eureka}
     eureka-server-d-n-s-name: localhost
+  instance:
+    homePageUrl: http://${server.address}:${server.port}/
+    hostname: localhost

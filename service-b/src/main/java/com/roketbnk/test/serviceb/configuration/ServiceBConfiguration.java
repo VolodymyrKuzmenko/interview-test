@@ -16,7 +16,7 @@ public class ServiceBConfiguration {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select()
                                                       .apis(basePackage("com.roketbnk.test.serviceb.resource"))
-                                                      .paths(PathSelectors.ant("/serviceb/api/*"))
+                                                      .paths(PathSelectors.ant("/api/**"))
                                                       .build();
     }
 
