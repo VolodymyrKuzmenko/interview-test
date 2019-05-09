@@ -2,20 +2,21 @@ server:
   port: 8888
 spring:
   application.name: api-gateway
-  cloud:
-    gateway:
-      routes:
-        - id: service-b
-          uri: lb://service-b
-          predicates:
-            - Path=/serviceb/**
-        - id: service-b
-          uri: lb://service-a
-          predicates:
-            - Path=/servicea/**
+
+zuul:
+  routes:
+    service-b:
+      serviceId: SERVICE-B
+      path: /serviceb/**
+      stripPrefix: false
+    service-a:
+      serviceId: SERVICE-A
+      path: /servicea/**
+      stripPrefix: false
 
 eureka:
   client:
+    fetchRegistry: true
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://localhost:8585/eureka}
     eureka-server-d-n-s-name: localhost

@@ -1,13 +1,12 @@
 spring:
-  security.user.name: user
-  security.user.password: password
   application:
     name: uaa-service
 server:
   port: 8084
+  servlet:
+    context-path: /uaa
 eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_URI:http://localhost:8585/eureka}
     eureka-server-d-n-s-name: localhost
-
